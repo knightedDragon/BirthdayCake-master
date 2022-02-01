@@ -43,26 +43,34 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/blowButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HOORAY!!" />
+            android:text="Blow Out" />
 
         <Switch
             android:id="@+id/switch1"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:checked="false"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="Frosting!"
-            android:textAllCaps="true" />
+            android:text="Frosting!" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/byeByeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="yay..." />
+            android:text="Goodbye" />
+
+        <Switch
+            android:id="@+id/candleSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Candles" />
+
+        <SeekBar
+            android:id="@+id/candleSeekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 </LinearLayout>

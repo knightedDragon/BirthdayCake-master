@@ -42,35 +42,59 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/blowButton"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Blow Out" />
+            android:orientation="vertical" >
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:checked="false"
-            android:text="Frosting!" />
+            <TextView
+                android:id="@+id/candleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How many candles?"
 
-        <Button
-            android:id="@+id/byeByeButton"
+            <SeekBar
+                android:id="@+id/candleSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Goodbye" />
+            android:orientation="vertical" >
 
-        <Switch
-            android:id="@+id/candleSwitch"
+            <Switch
+                android:id="@+id/candleSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Candles" />
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:checked="false"
+                android:text="Frosting!" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Candles" />
+            android:orientation="vertical" >
 
-        <SeekBar
-            android:id="@+id/candleSeekBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/blowButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Blow Out" />
 
+            <Button
+                android:id="@+id/byeByeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:text="Goodbye" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

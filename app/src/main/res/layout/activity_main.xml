@@ -51,7 +51,7 @@
                 android:id="@+id/candleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="How many candles?"
+                android:text="How many candles?" />
 
             <SeekBar
                 android:id="@+id/candleSeekBar"
@@ -69,7 +69,7 @@
                 android:id="@+id/candleSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Candles" />
+                android:text="Candles!" />
 
             <Switch
                 android:id="@+id/switch1"

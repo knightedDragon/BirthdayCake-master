@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/textView"
@@ -27,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="20">
 
         <!--        CakeView is a custom SurfaceView that is defined in the app's source code -->
         <cs301.birthdaycake.CakeView
@@ -40,7 +41,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="wrap_content"

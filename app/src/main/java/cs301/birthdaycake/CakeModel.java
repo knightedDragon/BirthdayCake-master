@@ -7,4 +7,12 @@ public class CakeModel {
     public boolean isLit = true;
     public int candleNum = 2;
 
+    public void flameOnOff() {
+        if (isLit == true) {
+            isLit = false;
+        } else {
+            isLit = true;
+        }
+    }
+
 } //class CakeModel

@@ -9,6 +9,8 @@ import android.view.SurfaceView;
 
 public class CakeView extends SurfaceView {
 
+    private CakeModel yummy;
+
     /* These are the paints we'll use to draw the birthday cake below */
     Paint cakePaint = new Paint();
     Paint frostingPaint = new Paint();
@@ -61,6 +63,8 @@ public class CakeView extends SurfaceView {
         wickPaint.setStyle(Paint.Style.FILL);
 
         setBackgroundColor(Color.WHITE);  //better than black default
+
+        yummy = new CakeModel();
 
     }
 
@@ -124,6 +128,10 @@ public class CakeView extends SurfaceView {
         drawCandle(canvas, cakeLeft + 2*(cakeWidth - (2 * candleWidth))/3 + candleWidth, cakeTop);
 
     }//onDraw
+
+    public CakeModel getCake (){
+        return yummy;
+    } //getCake
 
 }//class CakeView
 

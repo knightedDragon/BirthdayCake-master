@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void goodbye(View button){
         Log.i("button","Goodbye");
+        finishAffinity();
     }
     //Bug is an IllegalStateException: Could not find method goodbye(View) in a parent or ancestor...
+    //Step over is crooked blue arrow, resume is green button, value is 2131492869
 }

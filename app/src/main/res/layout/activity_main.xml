@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="13">
+    android:weightSum="11">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
@@ -25,15 +26,10 @@
             android:textSize="34sp" />
     </LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="9"
+        android:layout_weight="10"
         android:orientation="horizontal">
 
         <!--        CakeView is a custom SurfaceView that is defined in the app's source code -->
@@ -44,19 +40,13 @@
             android:layout_weight="1" />
     </LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="0"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         android:weightSum="5">
 
@@ -80,7 +70,9 @@
             <SeekBar
                 android:id="@+id/candleSeekBar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:max="5"
+                android:progress="2" />
 
         </LinearLayout>
 
@@ -98,13 +90,14 @@
                 android:id="@+id/candleSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text="Candles!" />
 
             <Switch
                 android:id="@+id/switch1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:checked="false"
+                android:checked="true"
                 android:text="Frosting!" />
         </LinearLayout>
 
@@ -128,6 +121,7 @@
                 android:id="@+id/byeByeButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="goodbye"
                 android:text="Goodbye" />
         </LinearLayout>
     </LinearLayout>

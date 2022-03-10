@@ -15,8 +15,8 @@ public class CakeController implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Log.d("button", "ashjjsd");
-
+        sheThique.flameOnOff();
+        looksGood.invalidate();
     }
 
 } //class CakeController

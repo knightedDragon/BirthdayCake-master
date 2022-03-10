@@ -18,11 +18,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         cake = findViewById(R.id.cakeview);
         CakeController nomNom = new CakeController(cake);
+
         Button button = findViewById(R.id.blowButton);
         button.setOnClickListener(nomNom);
 
 
     }
+
 
     public void goodbye(View button){
         Log.i("button","Goodbye");

@@ -14,5 +14,13 @@ public class CakeModel {
             isLit = true;
         }
     }
+    public boolean setHasCandles(boolean isChecked){
+        if (isChecked) {
+            hasCandles = true;
+        } else {
+            hasCandles = false;
+        }
+        return isChecked;
+    }
 
 } //class CakeModel

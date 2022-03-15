@@ -30,7 +30,8 @@ public class CakeController implements View.OnClickListener,
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
+        sheThique.setCandleNum(progress);
+        looksGood.invalidate();
     }
 
     @Override

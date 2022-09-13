@@ -40,49 +40,29 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="How many candles?">
-
-                </TextView>
-
-                <SeekBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </SeekBar>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-            </LinearLayout>
-
-            //TODO: MOVE STUFF AROUND
-            <Button
-                android:id="@+id/button2"
+            <TextView
+                android:id="@+id/candleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="yay..." />
+                android:text="How many candles?">
+            </TextView>
+
+            <SeekBar
+                android:id="@+id/candleBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </SeekBar>
+
+        </LinearLayout> //Column 1 End
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <Switch
                 android:id="@+id/frostSwitch"
@@ -90,12 +70,33 @@
                 android:layout_height="wrap_content"
                 android:text="Frosting!" />
 
-            <Button
-                android:id="@+id/button"
+            <Switch
+                android:id="@+id/candleSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="HOORAY!!" />
-        </LinearLayout>
+                android:text="Candles?" />
+
+        </LinearLayout> //Column 2 End
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/blowButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blow Out!" />
+
+            <Button
+                android:id="@+id/byeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Goodbye!" />
+
+        </LinearLayout> //Column 3 End
 
     </LinearLayout>
+
 </LinearLayout>

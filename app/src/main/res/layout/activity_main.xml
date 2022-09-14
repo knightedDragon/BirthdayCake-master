@@ -13,9 +13,10 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Happy Birthday!"
+            android:textAlignment="center"
             android:textColor="#FF9800"
             android:textSize="40dp" />
     </LinearLayout>
@@ -37,50 +38,74 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:gravity="right"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight="7"
+            android:gravity="center_vertical"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/candleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="How many candles?">
-            </TextView>
+                android:layout_marginLeft="10dp"
+                android:text="How many candles?"
+                android:textSize="16sp"/>
 
             <SeekBar
                 android:id="@+id/candleBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </SeekBar>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="5"
+                android:progress="2"
+                android:progressTint="#0021FF"
+                android:thumbTint="#AF0742" />
 
-        </LinearLayout> //Column 1 End
+        </LinearLayout>
+        //Column 1 End
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_weight="1">>
 
             <Switch
                 android:id="@+id/frostSwitch"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Frosting!" />
+                android:checked="true"
+                android:text="Frosting!"
+                android:thumbTint="#AF0742"
+                android:trackTint="#0021FF" />
 
             <Switch
                 android:id="@+id/candleSwitch"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Candles?" />
+                android:checked="true"
+                android:text="Candles?"
+                android:thumbTint="#AF0742"
+                android:trackTint="#0021FF" />
 
-        </LinearLayout> //Column 2 End
+        </LinearLayout>
+        //Column 2 End
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
 
             <Button
@@ -93,9 +118,11 @@
                 android:id="@+id/byeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="goodbye"
                 android:text="Goodbye!" />
 
-        </LinearLayout> //Column 3 End
+        </LinearLayout>
+        //Column 3 End
 
     </LinearLayout>
 

@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,10 +15,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_main);
+
+        CakeView view = findViewById(R.id.cakeview);
+        CakeController cakeCon = new CakeController(view);
+
+        Button blow = findViewById(R.id.blowButton);
+        blow.setOnClickListener(cakeCon);
+        Switch candle = findViewById(R.id.candleSwitch);
+        candle.setOnCheckedChangeListener(cakeCon);
     }
 
     public void goodbye(View button) {
         Log.i("button","Goodbye!");
-        finishAffinity();
     }
 }

@@ -36,6 +36,8 @@ public class CakeView extends SurfaceView {
     public static final float outerFlameRadius = 30.0f;
     public static final float innerFlameRadius = 15.0f;
 
+    private float combo = cakeTop;
+
 
 
     /**
@@ -111,8 +113,10 @@ public class CakeView extends SurfaceView {
         float top = cakeTop;
         float bottom = cakeTop + frostHeight;
 
-        //Frosting on top
-        canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, frostingPaint);
+        if (model.frosted) {
+            //Frosting on top
+            canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, frostingPaint);
+        }
         top += frostHeight;
         bottom += layerHeight;
 
@@ -129,11 +133,18 @@ public class CakeView extends SurfaceView {
         //Then a second cake layer
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, cakePaint);
 
-
+        //Now equidistant candles
+        if (!model.frosted) {
+            combo = cakeTop + frostHeight;
+        }
+        if (model.frosted) {
+            combo = cakeTop;
+        }
         if (model.candles) {
-            //Now two equidistant candles
-            drawCandle(canvas, cakeLeft + (cakeWidth - candleWidth * 2) / 3, cakeTop);
-            drawCandle(canvas, cakeLeft + (cakeWidth - candleWidth * 2) * 2 / 3 + candleWidth, cakeTop);
+            for (int i = 0; i < model.candleNum; i++) {
+                drawCandle(canvas, cakeLeft + ((cakeWidth - candleWidth * model.candleNum)
+                         * (i + 1) / (model.candleNum + 1) + i * candleWidth), combo);
+            }
         }
     }//onDraw
 

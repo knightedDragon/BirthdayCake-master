@@ -10,5 +10,13 @@ public class CakeModel {
     public void candleBeGone() {
         candles = !(candles);
     }
+    public void frostBeGone() {
+        frosted = !(frosted);
+    }
+
+
+    public void setCandleNum(int progress) {
+        candleNum = progress;
+    }
 
 }

@@ -19,8 +19,8 @@ public class CakeController implements View.OnClickListener,
     @Override
     public void onClick(View v) {
         Log.d("String", "Wooooooo");
-        if (v.getId() == R.id.blowButton) {
-            model.blowOut();
+        if (v.getId() == R.id.exstinguish) {
+            model.exstinguish();
         }
         view.invalidate();
     }

@@ -20,7 +20,7 @@ public class CakeController implements View.OnClickListener,
     public void onClick(View v) {
         Log.d("String", "Wooooooo");
         if (v.getId() == R.id.exstinguish) {
-            model.exstinguish();
+            model.blowOut();
         }
         view.invalidate();
     }

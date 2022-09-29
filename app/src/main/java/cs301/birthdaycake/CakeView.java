@@ -40,7 +40,7 @@ public class CakeView extends SurfaceView {
     public static final float innerFlameRadius = 15.0f;
 
     private static final float xDia = 80.0f;
-    private static final float yDia = xDia * (3 / 2);
+    private static final float yDia = 110.0f;
     private static final float stringHalf = 50.0f;
     public float x, y;
 
@@ -61,7 +61,7 @@ public class CakeView extends SurfaceView {
         model = new CakeModel();
 
         //Setup our palette
-        cakePaint.setColor(0xFFC00269);  //Pinkish
+        cakePaint.setColor(0xFFB3054C);  //Pink Red
         cakePaint.setStyle(Paint.Style.FILL);
         frostingPaint.setColor(0xFFFFFACD);  //pale yellow
         frostingPaint.setStyle(Paint.Style.FILL);
@@ -76,7 +76,7 @@ public class CakeView extends SurfaceView {
 
         balloonPaint.setColor(Color.BLUE);
         balloonPaint.setStyle(Paint.Style.FILL);
-        stringPaint.setColor(Color.GRAY);
+        stringPaint.setColor(Color.MAGENTA);
         stringPaint.setStyle(Paint.Style.FILL);
 
         setBackgroundColor(Color.WHITE);  //better than black default
@@ -116,8 +116,8 @@ public class CakeView extends SurfaceView {
     public void drawBalloon(Canvas canvas) {
         canvas.drawOval(x, y, x + xDia, y + yDia, balloonPaint);
         for (int i = 0; i < 3; i++) {
-            canvas.drawArc(x + (xDia / 3), y + yDia + (i * stringHalf),
-                    x + (2 * xDia / 3), y + yDia + ((i + 1) * stringHalf),
+            canvas.drawArc(x + (xDia * 2 / 5), y + yDia + (i * stringHalf),
+                    x + (xDia * 3 / 5), y + yDia + ((i + 1) * stringHalf),
                     ((i % 2) * 180) + 90, 180,true, stringPaint);
         }
     }

@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
         CakeView view = findViewById(R.id.cakeview);
         CakeController cakeCon = new CakeController(view);
 
+        view.setOnTouchListener(cakeCon);
+
         Button blow = findViewById(R.id.extinguish);
         blow.setOnClickListener(cakeCon);
 

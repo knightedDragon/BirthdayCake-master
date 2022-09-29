@@ -1,7 +1,5 @@
 package cs301.birthdaycake;
 
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,7 +7,9 @@ import android.widget.CompoundButton;
 import android.widget.SeekBar;
 
 public class CakeController implements View.OnClickListener,
-        CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, View.OnTouchListener {
+        CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener,
+        View.OnTouchListener {
+
     private CakeView view;
     private CakeModel model;
 
@@ -59,18 +59,17 @@ public class CakeController implements View.OnClickListener,
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
-        public boolean onTouch(View view, MotionEvent motionEvent) {
-            // check that it was the first tap
-            if (motionEvent.getActionMasked() == MotionEvent.ACTION_DOWN) { // action_down is when they click down (press on screen)
-                // ask for coordinates, finger location
-                float x = motionEvent.getX();
-                float y = motionEvent.getY();
-                model.setX(x);
-                model.setY(y);
-                return true; // "consumed" the event
-            }
-            view.invalidate();
-            return false; // in this case we didn't do anything
-        }
-    };
 
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+            //Get touch location
+            model.moveBalloon(event.getX(), event.getY());
+            
+            view.invalidate();
+            return true;
+        }
+
+        return false;
+    }
+}

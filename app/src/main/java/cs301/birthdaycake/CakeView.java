@@ -39,10 +39,10 @@ public class CakeView extends SurfaceView {
     public static final float outerFlameRadius = 30.0f;
     public static final float innerFlameRadius = 15.0f;
 
-    private static final float rad = 80.0f;
-    private static final float string = 100.0f;
-
-    public float bX, bY;
+    private static final float xDia = 80.0f;
+    private static final float yDia = xDia * (3 / 2);
+    private static final float stringHalf = 50.0f;
+    public float x, y;
 
     private float combo = cakeTop;
 
@@ -112,9 +112,14 @@ public class CakeView extends SurfaceView {
 
     }
 
-    public void drawBalloon(Canvas canvas, int x, int y) {
-        canvas.drawOval(x, y, x + rad, y + (3 * rad / 2), balloonPaint);
-        //TODO: DRAW THE STRING
+    //Draw the balloons
+    public void drawBalloon(Canvas canvas) {
+        canvas.drawOval(x, y, x + xDia, y + yDia, balloonPaint);
+        for (int i = 0; i < 3; i++) {
+            canvas.drawArc(x + (xDia / 3), y + yDia + (i * stringHalf),
+                    x + (2 * xDia / 3), y + yDia + ((i + 1) * stringHalf),
+                    ((i % 2) * 180) + 90, 180,true, stringPaint);
+        }
     }
 
     /**
@@ -164,6 +169,12 @@ public class CakeView extends SurfaceView {
                          * (i + 1) / (model.candleNum + 1) + i * candleWidth), combo);
             }
         }
+        if (model.balloon) {
+            x = model.bX - (xDia / 2);
+            y = model.bY - (yDia / 2);
+            drawBalloon(canvas);
+        }
+
 
     }//onDraw
 

@@ -1,8 +1,10 @@
 package cs301.birthdaycake;
 
 public class CakeModel {
-    public boolean lit = true, frosted = true, candles = true;
+    public boolean lit = true, frosted = true, candles = true, balloon = false;
     public int candleNum = 2;
+    public float bX, bY;
+
 
     public void blowOut() {
         lit = !(lit);
@@ -13,10 +15,13 @@ public class CakeModel {
     public void frostBeGone() {
         frosted = !(frosted);
     }
-
-
     public void setCandleNum(int progress) {
         candleNum = progress;
     }
 
+    public void moveBalloon(float x, float y) {
+        balloon = true;
+        bX = x;
+        bY = y;
+    }
 }

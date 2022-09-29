@@ -64,8 +64,7 @@ public class CakeController implements View.OnClickListener,
     public boolean onTouch(View v, MotionEvent event) {
         if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
             //Get touch location
-            view.bX = event.getX();
-            view.bY = event.getY();
+            model.moveBalloon(event.getX(), event.getY());
 
             view.invalidate();
             return true;

@@ -10,6 +10,7 @@ import android.widget.SeekBar;
 import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
+    private boolean isTouch = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
         CakeView view = findViewById(R.id.cakeview);
         CakeController cakeCon = new CakeController(view);
-
-        view.setOnTouchListener(cakeCon);
 
         Button blow = findViewById(R.id.extinguish);
         blow.setOnClickListener(cakeCon);
@@ -33,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         SeekBar candBar = findViewById(R.id.candleBar);
         candBar.setOnSeekBarChangeListener(cakeCon);
+
+        view.setOnTouchListener(cakeCon);
     }
 
     public void goodbye(View button) {

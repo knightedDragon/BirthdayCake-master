@@ -9,7 +9,7 @@ import android.widget.CompoundButton;
 import android.widget.SeekBar;
 
 public class CakeController implements View.OnClickListener,
-        CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, View.OnTouchListener {
+        CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener {
     private CakeView view;
     private CakeModel model;
 

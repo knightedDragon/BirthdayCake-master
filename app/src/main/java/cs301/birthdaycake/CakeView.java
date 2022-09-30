@@ -80,6 +80,14 @@ public class CakeView extends SurfaceView {
      * draws a candle at a specified position.  Important:  the left, bottom coordinates specify
      * the position of the bottom left corner of the candle
      */
+    public void updateXY(Canvas canvas){
+        Paint paint = new Paint();
+
+        paint.setColor(Color.RED);
+        paint.setTextSize(20);
+        canvas.drawText("X:"+model.X +" Y:"+model.Y, 1400, 700, paint);
+    }
+
     public void drawCandle(Canvas canvas, float left, float bottom) {
         canvas.drawRect(left, bottom - candleHeight, left + candleWidth, bottom, candlePaint);
 
@@ -152,11 +160,7 @@ public class CakeView extends SurfaceView {
             }
         }
 
-        Paint paint = new Paint();
-
-        paint.setColor(Color.RED);
-        paint.setTextSize(20);
-        canvas.drawText("X:"+model.X +" Y:"+model.Y, 1400, 700, paint);
+        updateXY(canvas);
 
     }//onDraw
 

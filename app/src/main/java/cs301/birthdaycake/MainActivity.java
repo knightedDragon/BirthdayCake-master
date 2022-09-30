@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         SeekBar candBar = findViewById(R.id.candleBar);
         candBar.setOnSeekBarChangeListener(cakeCon);
 
-        view.setOnTouchListener(cakeCon);
+        view.setOnTouchListener((View.OnTouchListener)view);
     }
 
     public void goodbye(View button) {

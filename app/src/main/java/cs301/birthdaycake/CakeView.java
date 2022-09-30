@@ -190,7 +190,7 @@ public class CakeView extends SurfaceView {
 
         paint.setColor(Color.RED);
         paint.setTextSize(20);
-        canvas.drawText("X:"+model.X +" Y:"+model.Y, 1400, 700, paint);
+        canvas.drawText("X:"+model.bX +" Y:"+model.bY, 1400, 700, paint);
 
     }//onDraw
 

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 
-public class CakeController implements View.OnClickListener,
+public class CakeController implements View.OnClickListener, View.OnTouchListener,
         CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener {
     private CakeView view;
     private CakeModel model;
@@ -59,14 +59,11 @@ public class CakeController implements View.OnClickListener,
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
-        public boolean onTouch(View view, MotionEvent motionEvent) {
+        public boolean onTouch(View view, MotionEvent event) {
             // check that it was the first tap
-            if (motionEvent.getActionMasked() == MotionEvent.ACTION_DOWN) { // action_down is when they click down (press on screen)
-                // ask for coordinates, finger location
-                float x = motionEvent.getX();
-                float y = motionEvent.getY();
-                model.setX(x);
-                model.setY(y);
+            if (event.getActionMasked() == MotionEvent.ACTION_DOWN) { // action_down is when they click down (press on screen)
+                //Get touch location
+                model.moveBalloon(event.getX(), event.getY());
                 return true; // "consumed" the event
             }
             view.invalidate();

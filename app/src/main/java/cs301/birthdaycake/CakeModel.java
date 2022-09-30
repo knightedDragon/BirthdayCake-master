@@ -26,12 +26,4 @@ public class CakeModel {
         bY = y;
     }
 
-    public void setX(float x){
-        X = x;
-    }
-
-    public void setY(float y){
-        Y = y;
-    }
-
 }

@@ -23,6 +23,8 @@ public class CakeView extends SurfaceView {
 
     Paint balloonPaint = new Paint();
     Paint stringPaint = new Paint();
+    Paint rectPaintRed = new Paint();
+    Paint rectPaintGreen = new Paint();
 
     /* These constants define the dimensions of the cake.  While defining constants for things
         like this is good practice, we could be calculating these better by detecting
@@ -81,6 +83,11 @@ public class CakeView extends SurfaceView {
         stringPaint.setColor(Color.MAGENTA);
         stringPaint.setStyle(Paint.Style.FILL);
 
+        rectPaintRed.setColor(Color.RED);
+        rectPaintRed.setStyle(Paint.Style.FILL);
+        rectPaintGreen.setColor(Color.GREEN);
+        rectPaintGreen.setStyle(Paint.Style.FILL);
+
         setBackgroundColor(Color.WHITE);  //better than black default
 
     }
@@ -131,6 +138,18 @@ public class CakeView extends SurfaceView {
                     x + (xDia * 3 / 5), y + yDia + ((i + 1) * stringHalf),
                     ((i % 2) * 180) + 90, 180,true, stringPaint);
         }
+    }
+
+    //Draw the grid
+    public void drawGrid(Canvas canvas) {
+        canvas.drawRect(x, y, x + (xDia / 2), y + (xDia / 3), rectPaintRed);
+        canvas.drawRect(x + (xDia / 2), y, x + xDia,
+                y + (xDia / 3), rectPaintGreen);
+
+
+        //TODO: MAKE THE OTHER RECTANGLES
+        canvas.drawRect(x, y, x + 2, y + 2, rectPaintRed);
+        canvas.drawRect(x, y, x + 2, y + 2, rectPaintGreen);
     }
 
     /**
@@ -184,6 +203,7 @@ public class CakeView extends SurfaceView {
             x = model.bX - (xDia / 2);
             y = model.bY - (yDia / 2);
             drawBalloon(canvas);
+            drawGrid(canvas);
         }
 
         Paint paint = new Paint();

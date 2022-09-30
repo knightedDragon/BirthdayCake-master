@@ -1,11 +1,10 @@
 package cs301.birthdaycake;
 
 public class CakeModel {
-    public boolean lit = true, frosted = true, candles = true, balloon = false;
+    public boolean lit = true, frosted = true, candles = true, balloon = false, gRGrid = false;
     public int candleNum = 2;
     public float X=0, Y=0;
     public float bX, bY;
-
 
 
     public void blowOut() {

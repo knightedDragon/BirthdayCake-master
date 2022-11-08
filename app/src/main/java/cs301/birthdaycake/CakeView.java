@@ -146,10 +146,10 @@ public class CakeView extends SurfaceView {
         canvas.drawRect(x + (xDia / 2), y, x + xDia,
                 y + (xDia / 3), rectPaintGreen);
 
-
-        //TODO: MAKE THE OTHER RECTANGLES
-        canvas.drawRect(x, y, x + 2, y + 2, rectPaintRed);
-        canvas.drawRect(x, y, x + 2, y + 2, rectPaintGreen);
+        canvas.drawRect(x + (xDia / 2), y + (xDia / 3), x + xDia,
+                y + (2 * xDia / 3), rectPaintGreen);
+        canvas.drawRect(x + (xDia / 2), y, x + xDia,
+                y + (xDia / 3), rectPaintRed);
     }
 
     /**
